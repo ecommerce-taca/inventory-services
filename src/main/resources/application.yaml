@@ -1,3 +1,36 @@
+server:
+  port: ${SERVER_PORT:8080}
+
 spring:
   application:
-    name: inventory service
+    name: inventory-service
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/inventorydb?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${SPRING_DATASOURCE_USERNAME:inventory}
+    password: ${SPRING_DATASOURCE_PASSWORD:inventory}
+    hikari:
+      connection-timeout: 2000
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+  kafka:
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:9092}
+    consumer:
+      group-id: inventory-service-group
+      auto-offset-reset: earliest
+
+inventory:
+  security:
+    internal-token: ${INVENTORY_SECURITY_INTERNAL_TOKEN:}
+  low-stock-threshold: ${INVENTORY_LOW_STOCK_THRESHOLD:5}
+  observability:
+    env: ${INVENTORY_OBSERVABILITY_ENV:${SPRING_PROFILES_ACTIVE:local}}
+    version: ${INVENTORY_OBSERVABILITY_VERSION:0.0.1-SNAPSHOT}
