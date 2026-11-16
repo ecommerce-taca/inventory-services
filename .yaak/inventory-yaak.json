@@ -1,0 +1,209 @@
+{
+  "yaakVersion": "0.1.0",
+  "yaakSchema": 4,
+  "timestamp": "2026-11-16T18:04:51.083084623",
+  "resources": {
+    "workspaces": [
+      {
+        "model": "workspace",
+        "id": "wk_mXMDsUq4j3",
+        "createdAt": "2026-11-16T18:04:35.844577985",
+        "updatedAt": "2026-11-16T18:04:35.844578496",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Inventory Service",
+        "encryptionKeyChallenge": null,
+        "settingValidateCertificates": true,
+        "settingFollowRedirects": true,
+        "settingRequestTimeout": 0,
+        "settingRequestMessageSize": 67108864,
+        "settingDnsOverrides": [],
+        "settingSendCookies": true,
+        "settingStoreCookies": true,
+        "settingHttpVersion": "auto"
+      }
+    ],
+    "environments": [
+      {
+        "model": "environment",
+        "id": "ev_pKmxN8RwbR",
+        "workspaceId": "wk_mXMDsUq4j3",
+        "createdAt": "2026-11-16T18:04:44.837443764",
+        "updatedAt": "2026-11-16T18:04:44.837444241",
+        "name": "local",
+        "public": true,
+        "base": false,
+        "parentModel": "environment",
+        "parentId": null,
+        "variables": [
+          {
+            "enabled": true,
+            "name": "base_url",
+            "value": "http://localhost:8080",
+            "id": null
+          }
+        ],
+        "color": null,
+        "sortPriority": 0.0
+      },
+      {
+        "model": "environment",
+        "id": "ev_dEEwaP25QQ",
+        "workspaceId": "wk_mXMDsUq4j3",
+        "createdAt": "2026-11-16T18:04:35.944455817",
+        "updatedAt": "2026-11-16T18:04:35.944456228",
+        "name": "Global Variables",
+        "public": true,
+        "base": true,
+        "parentModel": "workspace",
+        "parentId": null,
+        "variables": [
+          {
+            "enabled": true,
+            "name": "base_url",
+            "value": "http://localhost:8080",
+            "id": null
+          }
+        ],
+        "color": null,
+        "sortPriority": 0.0
+      }
+    ],
+    "folders": [
+      {
+        "model": "folder",
+        "id": "fl_fiZqEncmXt",
+        "createdAt": "2026-11-16T18:04:44.903282902",
+        "updatedAt": "2026-11-16T18:04:44.903283289",
+        "workspaceId": "wk_mXMDsUq4j3",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "health",
+        "sortPriority": 0.0,
+        "settingSendCookies": {
+          "enabled": false,
+          "value": true
+        },
+        "settingStoreCookies": {
+          "enabled": false,
+          "value": true
+        },
+        "settingValidateCertificates": {
+          "enabled": false,
+          "value": true
+        },
+        "settingFollowRedirects": {
+          "enabled": false,
+          "value": true
+        },
+        "settingRequestTimeout": {
+          "enabled": false,
+          "value": 0
+        },
+        "settingRequestMessageSize": {
+          "enabled": false,
+          "value": 67108864
+        },
+        "settingHttpVersion": {
+          "enabled": false,
+          "value": "auto"
+        }
+      }
+    ],
+    "httpRequests": [
+      {
+        "model": "http_request",
+        "id": "rq_xV5vLfoBk4",
+        "createdAt": "2026-11-16T18:04:51.027606521",
+        "updatedAt": "2026-11-16T18:04:51.027606866",
+        "workspaceId": "wk_mXMDsUq4j3",
+        "folderId": "fl_fiZqEncmXt",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Health Ready",
+        "sortPriority": 2.0,
+        "url": "${[ base_url ]}/health/ready",
+        "urlParameters": [],
+        "settingSendCookies": {
+          "enabled": false,
+          "value": true
+        },
+        "settingStoreCookies": {
+          "enabled": false,
+          "value": true
+        },
+        "settingValidateCertificates": {
+          "enabled": false,
+          "value": true
+        },
+        "settingFollowRedirects": {
+          "enabled": false,
+          "value": true
+        },
+        "settingRequestTimeout": {
+          "enabled": false,
+          "value": 0
+        },
+        "settingHttpVersion": {
+          "enabled": false,
+          "value": "auto"
+        }
+      },
+      {
+        "model": "http_request",
+        "id": "rq_PkBHrwZmvv",
+        "createdAt": "2026-11-16T18:04:50.959636171",
+        "updatedAt": "2026-11-16T18:04:50.959636552",
+        "workspaceId": "wk_mXMDsUq4j3",
+        "folderId": "fl_fiZqEncmXt",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Health Live",
+        "sortPriority": 1.0,
+        "url": "${[ base_url ]}/health/live",
+        "urlParameters": [],
+        "settingSendCookies": {
+          "enabled": false,
+          "value": true
+        },
+        "settingStoreCookies": {
+          "enabled": false,
+          "value": true
+        },
+        "settingValidateCertificates": {
+          "enabled": false,
+          "value": true
+        },
+        "settingFollowRedirects": {
+          "enabled": false,
+          "value": true
+        },
+        "settingRequestTimeout": {
+          "enabled": false,
+          "value": 0
+        },
+        "settingHttpVersion": {
+          "enabled": false,
+          "value": "auto"
+        }
+      }
+    ],
+    "grpcRequests": [],
+    "websocketRequests": []
+  }
+}

@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 000-baseline
+      author: db-engineer
+      changes:
+        - tagDatabase:
+            tag: baseline
+      rollback: {}
